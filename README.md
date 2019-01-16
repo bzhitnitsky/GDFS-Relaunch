@@ -4,6 +4,8 @@ This is an application with one simple job, and that is to relaunch Google Drive
 
 ![Screenshot of script installed as an app](installedapp.png)
 
+Get it [here!](https://github.com/bzhitnitsky/GDFS-Relaunch/releases/latest/)
+
 ## Why did I create this?
 
 The short version of the story is, when you log off of your user account on macOS High Sierra 10.13.6, GDFS version 29.1.23.2047 has a bug that causes the Google Drive volume to become unmounted overnight. Upon logging in the next morning, you find GDFS “running”, but the Google Drive volume missing, and files therefore inaccessible. I haven’t been able to find a way to reproduce the bug, it seems to happen randomly every few days for different users on a different hosts. I quickly found myself inundated with Helpdesk calls and unhappy users with lots of downtime.
@@ -59,7 +61,7 @@ The $USER variable comes from the installer package, for those of you who might 
 
 ## Install
 
-For those of you who are adventurous, you can follow the “How it works” section above, and build your own version of this nifty little app. For those who need a built copy of it to hit the ground running and appease your users, just download the “FixGDFS.pkg” file, and deploy to your hosts.
+For those of you who are adventurous, you can follow the “How it works” section above, and build your own version of this nifty little app. For those who need a built copy of it to hit the ground running and appease your users, head over to [releases](https://github.com/bzhitnitsky/GDFS-Relaunch/releases/latest/) and download the .pkg or the .app.zip (depending on your deployment method and needs).
 
 One caveat is, the package only adds the app to the Dock of the user that is currently logged in when it is deployed. The process of adding the app to the Dock will kill the Dock, and cause all of the user’s minimized windows to pop back up. You can make changes to have this app added to all user’s Docks, or to not kill the Dock during install, and maybe even schedule a Cronjob to reboot the system or relaunch the Dock for a later time depending on your requirements.
 
