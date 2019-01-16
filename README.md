@@ -33,9 +33,9 @@ kill -9 $(ps -p $(ps -p $PPID -o ppid=) -o ppid=)
 
 When run from terminal, it kills all GDFS and GDFS helper processes, sleeps for 2 seconds for them to quit, then launches the GDFS app (assuming it is installed in the default location, /Applications/), and then quits terminal. Initially, I was going to run this script remotely when a user experienced the issue, but it started happening so frequently, I needed a self service option.
 
-I used [appify] (https://gist.github.com/mathiasbynens/674099) to wrap my script in a macOS application, and quickly mocked up a self explanatory icon for it based on that of GDFS. You can stop here and have a working app, but I needed to deploy this via Apple Remote Desktop (hereinafter ARD), and wanted the users to have a convenient icon in their Dock so they didn’t have to go digging around in /Applications/ (which would inevitably end in another Helpdesk call from some of my less savvy users).
+I used [appify](https://gist.github.com/mathiasbynens/674099) to wrap my script in a macOS application, and quickly mocked up a self explanatory icon for it based on that of GDFS. You can stop here and have a working app, but I needed to deploy this via Apple Remote Desktop (hereinafter ARD), and wanted the users to have a convenient icon in their Dock so they didn’t have to go digging around in /Applications/ (which would inevitably end in another Helpdesk call from some of my less savvy users).
 
-I proceeded to use [Packages] (http://s.sudre.free.fr/Software/Packages/about.html) to make a simple Raw installer package that can be deployed via ARD. I have the installer place the .app that I created with appify, into /Applications/. Then, to add the application to the user’s Dock, we just have to run a simple bash script that I called “Shared_Fix_Dock.sh” as the user whose Dock we want to modify.
+I proceeded to use [Packages](http://s.sudre.free.fr/Software/Packages/about.html) to make a simple Raw installer package that can be deployed via ARD. I have the installer place the .app that I created with appify, into /Applications/. Then, to add the application to the user’s Dock, we just have to run a simple bash script that I called “Shared_Fix_Dock.sh” as the user whose Dock we want to modify.
 
 ```bash
 #!/bin/bash
