@@ -1,18 +1,20 @@
 # GDFS-Relaunch
 
 This is an application with one simple job, and that is to relaunch Google Drive File Stream (hereinafter GDFS) on macOS.
+Get it [here!](https://github.com/bzhitnitsky/GDFS-Relaunch/releases/latest/)
+
 
 ![Screenshot of script installed as an app](installedapp.png)
-
-Get it [here!](https://github.com/bzhitnitsky/GDFS-Relaunch/releases/latest/)
 
 ## Why did I create this?
 
 The short version of the story is, when you log off of your user account on macOS High Sierra 10.13.6, GDFS version 29.1.23.2047 has a bug that causes the Google Drive volume to become unmounted overnight. Upon logging in the next morning, you find GDFS “running”, but the Google Drive volume missing, and files therefore inaccessible. I haven’t been able to find a way to reproduce the bug, it seems to happen randomly every few days for different users on a different hosts. I quickly found myself inundated with Helpdesk calls and unhappy users with lots of downtime.
 
-GSuite support was useless when I contacted them about the issue. I sent them log files from 4 different occurrences of this bug from various hosts and various users. They initially told me they would look into the issue and that my configuration looks good. They “looked into the log files further” and didn’t offer any resolution. When I demanded they escalate the issue and help get it resolved, as it’s causing lots of downtime for the end users, they told me that this issue is not of high priority as they haven’t received many complaints about this issue and those that they had received, were deemed to be caused by some so-called “preference settings” on the client side. They “escalated” the issue, and I received this response.
+GSuite support was less than helpful when I contacted them regarding this issue. I sent them log files from 4 separate occurrences of this bug from various hosts and users. They initially told me that my configuration looks good and they would look into the issue. They “looked into the log files further” and didn’t offer any resolution. When I demanded they escalate the issue as it’s causing lots of downtime for the end users, they told me that this issue is not of high priority. They haven’t received many complaints about this issue, and those that they had received were deemed to be caused by some so-called “preference settings” on the client side. I said this was unacceptable and politely argued until they agreed and “escalated” the issue. They supposedly forwarded my log files to some engineering team, but basically told me not to hold my breath. Later, I received this email.
 
 ![Screenshot of email with GSuite support](email.png)
+These hosts aren't bound to a domain, and have no other restrictions in place.
+Google "Enterprise Support" = USELESS! Time to take matters into my own hands...
 
 The only way to fix the issue that I’ve found is to quit and relaunch GDFS.
 That’s where GDFS-Relaunch comes in!
